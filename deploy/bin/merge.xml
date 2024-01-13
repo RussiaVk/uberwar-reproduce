@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<uberwar> 
+	<wars>
+	  <war>org.deking.test:webapp1</war>
+      <war>org.deking.test:webapp2</war>
+  </wars>
+  <merges> 
+    <merge>
+      <type>web.xml</type>
+      <parameters>
+        <default>
+          <tag name="display-name">
+            <strategy name="Overwrite"/>
+          </tag>
+          <tag name="welcome-file-list">
+            <strategy name="NodeMerge">
+              <welcome-file-list>
+                <welcome-file>$left:welcome-file</welcome-file>
+                <welcome-file>$right:welcome-file</welcome-file>
+              </welcome-file-list>
+            </strategy>
+          </tag> 
+        </default>
+      </parameters>
+    </merge>  
+  </merges>
+</uberwar>
